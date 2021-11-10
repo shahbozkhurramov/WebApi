@@ -1,0 +1,75 @@
+﻿<div class="top-column pl-4 navbar navbar-dark">
+    <img src="/logopng.png" asp-append-version="true" width="100px"/>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <ul class="nav flex-column">
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+        <NavLink class="nav-link" href="Chapter1">
+            <span class="oi oi-list-rich" aria-hidden="true"></span> Chapter 1
+        </NavLink>
+        </li>
+        <li class="nav-item px-3">
+        <NavLink class="nav-link" href="Chapter2">
+            <span class="oi oi-list-rich" aria-hidden="true"></span> Chapter 2
+        </NavLink>
+        </li>
+        <li class="nav-item px-3">
+        <NavLink class="nav-link" href="Chapter3">
+            <span class="oi oi-list-rich" aria-hidden="true"></span> Chapter 3
+        </NavLink>
+        </li>
+        <li class="nav-item px-3">
+        <NavLink class="nav-link" href="Chapter4">
+            <span class="oi oi-list-rich" aria-hidden="true"></span> Chapter 4
+        </NavLink>
+        </li>
+        <li class="nav-item px-3">
+        <NavLink class="nav-link" href="Chapter5">
+            <span class="oi oi-list-rich" aria-hidden="true"></span> Chapter 5
+        </NavLink>
+        </li>
+        <li class="nav-item px-3">
+        <NavLink class="nav-link" href="Chapter6">
+            <span class="oi oi-list-rich" aria-hidden="true"></span> Chapter 6
+        </NavLink>
+        </li>
+        <li class="nav-item px-3">
+        <NavLink class="nav-link" href="Chapter7">
+            <span class="oi oi-list-rich" aria-hidden="true"></span> Chapter 7
+        </NavLink>
+        </li>
+        <li class="nav-item px-3">
+        <NavLink class="nav-link" href="Chapter8">
+            <span class="oi oi-list-rich" aria-hidden="true"></span> Chapter 8
+        </NavLink>
+        </li>
+        <li class="nav-item px-3">
+        <NavLink class="nav-link" href="Chapter9">
+            <span class="oi oi-list-rich" aria-hidden="true"></span> Chapter 9
+        </NavLink>
+        </li>
+        <li class="nav-item px-3">
+        <NavLink class="nav-link" href="Chapter10">
+            <span class="oi oi-list-rich" aria-hidden="true"></span> Chapter 10
+        </NavLink>
+        </li>
+
+    </ul>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
