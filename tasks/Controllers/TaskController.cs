@@ -1,5 +1,8 @@
+using System.Net.Mime;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using tasks.Model;
 using tasks.Services;
 
 namespace tasks.Controllers
@@ -15,6 +18,12 @@ namespace tasks.Controllers
         {
             _logger=logger;
             _storage=storage;
+        }
+        [HttpPost]
+        [Consumes(MediaTypeNames.Application.Json)]
+        public async Task<IActionResult> CreateTask([FromBody]NewTask newTask)
+        {
+            
         }
     }
 }
