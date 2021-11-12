@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using tasks.Data;
+using tasks.Services;
 
 namespace tasks
 {
@@ -36,6 +37,8 @@ namespace tasks
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "tasks", Version = "v1" });
             });
+
+            services.AddTransient<IStorageService, DbStorageService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -19,6 +19,28 @@ namespace tasks.Services
             _context = context;
             _logger = logger;
         }
+
+        public async Task<(bool IsSuccess, Exception exception)> DeleteTaskAsync(Entity.Task task)
+        {
+            try
+            {
+                if(await _context.Tasks.AnyAsync(t => t.Id==task.Id))
+                {
+                    _context.Tasks.Remove(task);
+                    await _context.SaveChangesAsync();
+                    return (true, null);
+                }
+                else
+                {
+                    return (false, new Exception("Task does not exist!"));
+                }
+            }
+            catch(Exception e)
+            {
+                return (false, e);
+            }
+        }
+
         public async Task<List<Entity.Task>> GetTaskAsync(
             Guid id = default(Guid), 
             string title = default(string), 

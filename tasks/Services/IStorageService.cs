@@ -7,6 +7,7 @@ namespace tasks.Services
     public interface IStorageService
     {
         Task<(bool IsSuccess, Exception exception)> InsertTaskAsync(Entity.Task task);
+        Task<(bool IsSuccess, Exception exception)> DeleteTaskAsync(Entity.Task task);
 
         Task<List<Entity.Task>> GetTaskAsync(
             Guid id = default(Guid),
@@ -20,6 +21,7 @@ namespace tasks.Services
             DateTimeOffset atATime = default(DateTimeOffset),
             string location = default(string),
             string url = default(string));
+        
 
         Task<(bool IsSuccess, Exception exception)> UpdateTaskAsync(Entity.Task task); 
     }
