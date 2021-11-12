@@ -28,7 +28,6 @@ namespace tasks.Model
 
         [JsonConverter(typeof(JsonStringEnumConverter))]
         public ETaskRepeat? Repeat { get; set; }
-        
 
         [JsonConverter(typeof(JsonStringEnumConverter))]
         public ETaskPriority? Priority { get; set; }
